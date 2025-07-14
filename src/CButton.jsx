@@ -1,5 +1,5 @@
 function CButton() {
-  return <Button>Like </Button>
+  return <button>Like and Share </button>
 }
 
 export default CButton;
