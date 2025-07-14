@@ -8,8 +8,9 @@ function App() {
       <Hello></Hello>
       <CButton></CButton>
       <Random></Random>
-      <Random></Random>
-      <Random></Random>
+      <button type="button" class="btn btn-primary">
+        Primary
+      </button>
     </>
   );
 }
