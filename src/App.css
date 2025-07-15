@@ -12,3 +12,7 @@ h1 {
 .todoBtn {
   min-width: 70px;
 }
+
+p {
+  font-size: 20px;
+}
