@@ -9,14 +9,17 @@ import ClockHeader from "./components/ClockHeader";
 import TodoItem1 from "./components/TodoItem1";
 import TodoItem2 from "./components/TodoItem2";
 import ClockTime from "./components/ClockTime";
+import MapMethod from "./components/MapMethod";
+
 function App() {
   return (
     <>
-      <div className="container text-center">
+      <MapMethod></MapMethod>
+      {/* <div className="container text-center">
         <ClockApp></ClockApp>
         <ClockHeader></ClockHeader>
         <ClockTime></ClockTime>
-      </div>
+      </div> */}
       {/* <div className="container">
         <AppName></AppName>
         <AddTodo></AddTodo>
