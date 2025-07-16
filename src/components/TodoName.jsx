@@ -1,4 +1,4 @@
-function AppName() {
+function TodoName() {
   return (
     <>
       <div className="container text-center">
@@ -11,4 +11,4 @@ function AppName() {
     </>
   );
 }
-export default AppName;
+export default TodoName;

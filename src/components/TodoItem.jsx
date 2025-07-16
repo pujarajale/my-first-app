@@ -1,6 +1,5 @@
-function TodoItem2() {
-  let itemName = "Go To Office";
-  let itemDate = "14/07/2025";
+import styles from "./TodoItem.module.css";
+const TodoItem = ({ itemName, itemDate }) => {
   return (
     <>
       <div className="container">
@@ -8,7 +7,10 @@ function TodoItem2() {
           <div className="col-6">{itemName}</div>
           <div className="col-4">{itemDate}</div>
           <div className="col-2">
-            <button type="button" className="btn btn-danger todoBtn">
+            <button
+              type="button"
+              className={`btn btn-danger ${styles.todoBtn}`}
+            >
               Delete
             </button>
           </div>
@@ -16,5 +18,5 @@ function TodoItem2() {
       </div>
     </>
   );
-}
-export default TodoItem2;
+};
+export default TodoItem;

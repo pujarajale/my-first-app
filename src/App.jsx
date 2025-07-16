@@ -3,15 +3,29 @@ import CButton from "./CButton";
 import Hello from "./Hello";
 import Random from "./Random";
 import AddTodo from "./components/AddTodo";
-import AppName from "./components/AppName";
+import TodoName from "./components/TodoName";
 import ClockApp from "./components/ClockApp";
 import ClockHeader from "./components/ClockHeader";
-import TodoItem1 from "./components/TodoItem1";
-import TodoItem2 from "./components/TodoItem2";
+import TodoItems from "./components/TodoItems";
 import ClockTime from "./components/ClockTime";
 import MapMethod from "./components/MapMethod";
 import FoodItems from "./components/foodItems";
 const App = () => {
+  const todoList = [
+    {
+      name: "Play Game",
+      dueDate: "14/07/2025",
+    },
+    {
+      name: "Buy Milk",
+      dueDate: "14/07/2025",
+    },
+    {
+      name: "Running",
+      dueDate: "14/07/2025",
+    },
+  ];
+
   const foodItemsArr = [
     "Veg Pizza",
     "Veg Burger",
@@ -25,10 +39,9 @@ const App = () => {
       <CButton></CButton>
       <Random></Random>
       <div className="container">
-        <AppName></AppName>
+        <TodoName></TodoName>
         <AddTodo></AddTodo>
-        <TodoItem1></TodoItem1>
-        <TodoItem2></TodoItem2>
+        <TodoItems todoItems={todoList}></TodoItems>
       </div>
       <div className="container text-center">
         <ClockApp></ClockApp>
