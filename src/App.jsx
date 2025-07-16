@@ -11,7 +11,13 @@ import TodoItem2 from "./components/TodoItem2";
 import ClockTime from "./components/ClockTime";
 import MapMethod from "./components/MapMethod";
 import FoodItems from "./components/foodItems";
-function App() {
+const App = () => {
+  const foodItemsArr = [
+    "Veg Pizza",
+    "Veg Burger",
+    "Paneer Wrap",
+    "Cold Coffee",
+  ];
   return (
     <>
       <h1>Hello, Welcome to my first react App</h1>
@@ -30,9 +36,9 @@ function App() {
         <ClockTime></ClockTime>
       </div>
       <MapMethod></MapMethod>
-      <FoodItems></FoodItems>
+      <FoodItems foodItems={foodItemsArr}></FoodItems>
     </>
   );
-}
+};
 
 export default App;
