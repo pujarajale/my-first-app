@@ -2,9 +2,18 @@
  margin: 2px;
  border: 1px solid gray;
 }
+.listItems {
+  display: flex;
+  justify-content: space-between;
+}
 
 .items{
   color:orange;
   font-size: 20px;
   font-weight: 700;
+}
+.buyButton{
+  float: right;
+  font-weight: 600;
+  margin: 2px 10px 2px 0;
 }
