@@ -8,11 +8,15 @@ const FoodItems = ({ foodItems }) => {
   const handleBuyClick = (foodItem) => {
     console.log(`${foodItem} being bought.`);
   };
+
+  const handleOnChange = (event) => {
+    console.log(event.target.value);
+  };
   return (
     <>
       <CommonContainer>
         <h1>Healthy Food</h1>
-        <FoodInput></FoodInput>
+        <FoodInput handleChange={handleOnChange}></FoodInput>
         <FoodItemError foodItem={foodItems}></FoodItemError>
         <FoodItemList
           foodItem={foodItems}
