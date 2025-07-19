@@ -9,8 +9,10 @@ import ClockHeader from "./components/ClockHeader";
 import TodoItems from "./components/TodoItems";
 import ClockTime from "./components/ClockTime";
 import MapMethod from "./components/MapMethod";
-import FoodItems from "./components/foodItems";
+import FoodItems from "./components/FoodItems";
 import Calculatorv1 from "./components/Calculatorv1";
+import { useState } from "react";
+
 const App = () => {
   const todoList = [
     {
@@ -27,7 +29,6 @@ const App = () => {
     },
   ];
 
-  const foodItemsArr = ["Roti", "Vegitable", "Dal", "Milk"];
   return (
     <>
       <h1>Hello, Welcome to my first react App</h1>
@@ -45,7 +46,7 @@ const App = () => {
         <ClockTime></ClockTime>
       </div>
       <MapMethod></MapMethod>
-      <FoodItems foodItems={foodItemsArr}></FoodItems>
+      <FoodItems></FoodItems>
       <Calculatorv1></Calculatorv1>
     </>
   );
