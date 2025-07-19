@@ -6,10 +6,12 @@ import { useState } from "react";
 
 const FoodItems = () => {
   const [foodItems, setFoodItems] = useState([]);
+  const [activeItem, setActiveItem] = useState([]);
 
   //handling on click event.
   const handleBuyClick = (foodItem) => {
-    console.log(`${foodItem} being bought.`);
+    let newItems = [...activeItem, foodItem];
+    setActiveItem(newItems);
   };
 
   const handleOnKeyDown = (event) => {
@@ -27,8 +29,9 @@ const FoodItems = () => {
         <FoodInput handleKeyDown={handleOnKeyDown}></FoodInput>
         <FoodItemList
           foodItem={foodItems}
-          handleClick={(foodItem) => {
-            handleBuyClick(foodItem);
+          bought={activeItem?.includes(foodItems)}
+          handleClick={(foodItems) => {
+            handleBuyClick(foodItems);
           }}
         ></FoodItemList>
         <FoodItemError foodItem={foodItems}></FoodItemError>

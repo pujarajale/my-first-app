@@ -1,9 +1,5 @@
 import styles from "./FoodItemList.module.css";
-const FoodItemList = ({ foodItem, handleClick }) => {
-  //or we can write other way
-  // const handleOnBuyButtonClick = (foodItem) => {
-  //   console.log(`${foodItem} being bought.`);
-  // };
+const FoodItemList = ({ foodItem, bought, handleClick }) => {
   return (
     <>
       <ul className={styles.listGroup}>
@@ -11,7 +7,9 @@ const FoodItemList = ({ foodItem, handleClick }) => {
         {foodItem.map((foodItem) => (
           <li
             key={foodItem}
-            className={`list-group-item ${styles["listItems"]}`}
+            className={`list-group-item ${styles["listItems"]} ${
+              bought && "active"
+            }`}
           >
             <span className={styles.items}>{foodItem}</span>
             <button
