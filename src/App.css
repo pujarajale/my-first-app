@@ -7,6 +7,7 @@ h1 {
 
 .container {
   margin: 8px 2px;
+  border: 1px solid gray;
 }
 
 p {

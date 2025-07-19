@@ -1,6 +1,6 @@
 import styles from "./Calculatorv1.module.css";
 
-const ButtonsCal = () => {
+const ButtonsCal = ({ onButtonClick }) => {
   const buttonNames = [
     "c",
     "1",
@@ -24,7 +24,13 @@ const ButtonsCal = () => {
     <>
       <div className={styles.buttonsContainer}>
         {buttonNames.map((buttons) => (
-          <button key={buttons} className={styles.calButton}>
+          <button
+            key={buttons}
+            className={styles.calButton}
+            onClick={() => {
+              onButtonClick(buttons);
+            }}
+          >
             {buttons}
           </button>
         ))}

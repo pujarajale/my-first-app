@@ -1,9 +1,15 @@
 import styles from "./Calculatorv1.module.css";
 
-const DisplayCal = () => {
+const DisplayCal = ({ displayValue }) => {
   return (
     <>
-      <input className={styles.display} type="text"></input>
+      <input
+        className={styles.display}
+        type="text"
+        placeholder=""
+        value={displayValue}
+        readOnly
+      ></input>
     </>
   );
 };
