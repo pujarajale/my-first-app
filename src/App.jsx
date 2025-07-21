@@ -12,29 +12,22 @@ import MapMethod from "./components/MapMethod";
 import FoodItems from "./components/FoodItems";
 import Calculatorv1 from "./components/Calculatorv1";
 import { useState } from "react";
+import WelcomeMsg from "./components/WelcomeMsg";
 
 const App = () => {
-  const todoList = [
-    {
-      name: "Play Game",
-      dueDate: "14/07/2025",
-    },
-    {
-      name: "Buy Milk",
-      dueDate: "14/07/2025",
-    },
-    {
-      name: "Running",
-      dueDate: "14/07/2025",
-    },
-  ];
-
+  const [todoItems, setTodoItems] = useState([]);
+  const handleNewItem = (todoName, dueDate) => {
+    console.log(`${todoName}`, `${dueDate}`);
+    let newTodoItem = [...todoItems, { name: todoName, dueDate: dueDate }];
+    setTodoItems(newTodoItem);
+  };
   return (
     <>
       <div className="container">
         <TodoName></TodoName>
-        <AddTodo></AddTodo>
-        <TodoItems todoItems={todoList}></TodoItems>
+        <AddTodo onNewItem={handleNewItem}></AddTodo>
+        {todoItems?.length === 0 && <WelcomeMsg></WelcomeMsg>}
+        <TodoItems todoItems={todoItems}></TodoItems>
       </div>
 
       <h1>Hello, Welcome to my first react App</h1>
