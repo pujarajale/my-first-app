@@ -31,15 +31,17 @@ const App = () => {
 
   return (
     <>
-      <h1>Hello, Welcome to my first react App</h1>
-      <Hello></Hello>
-      <CButton></CButton>
-      <Random></Random>
       <div className="container">
         <TodoName></TodoName>
         <AddTodo></AddTodo>
         <TodoItems todoItems={todoList}></TodoItems>
       </div>
+
+      <h1>Hello, Welcome to my first react App</h1>
+      <Hello></Hello>
+      <CButton></CButton>
+      <Random></Random>
+
       <div className="container text-center">
         <ClockApp></ClockApp>
         <ClockHeader></ClockHeader>

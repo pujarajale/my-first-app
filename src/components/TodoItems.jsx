@@ -2,7 +2,7 @@ import TodoItem from "./TodoItem";
 const TodoItems = ({ todoItems }) => {
   return (
     <>
-      <div className="item-container">
+      <div>
         {todoItems.map((items) => (
           <TodoItem
             key={items.name}
