@@ -17,7 +17,6 @@ import WelcomeMsg from "./components/WelcomeMsg";
 const App = () => {
   const [todoItems, setTodoItems] = useState([]);
   const handleNewItem = (itemName, dueDate) => {
-    console.log(`${itemName}`, `${dueDate}`);
     let newTodoItem = [...todoItems, { name: itemName, dueDate: dueDate }];
     setTodoItems(newTodoItem);
   };
