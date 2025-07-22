@@ -16,18 +16,26 @@ import WelcomeMsg from "./components/WelcomeMsg";
 
 const App = () => {
   const [todoItems, setTodoItems] = useState([]);
-  const handleNewItem = (todoName, dueDate) => {
-    console.log(`${todoName}`, `${dueDate}`);
-    let newTodoItem = [...todoItems, { name: todoName, dueDate: dueDate }];
+  const handleNewItem = (itemName, dueDate) => {
+    console.log(`${itemName}`, `${dueDate}`);
+    let newTodoItem = [...todoItems, { name: itemName, dueDate: dueDate }];
     setTodoItems(newTodoItem);
   };
+  const handleDeleteItem = (itemName) => {
+    const newTodoItems = todoItems.filter((item) => item.name !== itemName);
+    setTodoItems(newTodoItems);
+  };
+
   return (
     <>
       <div className="container">
         <TodoName></TodoName>
         <AddTodo onNewItem={handleNewItem}></AddTodo>
         {todoItems?.length === 0 && <WelcomeMsg></WelcomeMsg>}
-        <TodoItems todoItems={todoItems}></TodoItems>
+        <TodoItems
+          todoItems={todoItems}
+          onDeleteClick={handleDeleteItem}
+        ></TodoItems>
       </div>
 
       <h1>Hello, Welcome to my first react App</h1>

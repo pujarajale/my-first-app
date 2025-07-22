@@ -1,5 +1,5 @@
 import styles from "./TodoItem.module.css";
-const TodoItem = ({ itemName, itemDate }) => {
+const TodoItem = ({ itemName, itemDate, onDeleteClick }) => {
   return (
     <>
       <div>
@@ -10,6 +10,9 @@ const TodoItem = ({ itemName, itemDate }) => {
             <button
               type="button"
               className={`btn btn-danger ${styles.todoBtn}`}
+              onClick={() => {
+                onDeleteClick(itemName);
+              }}
             >
               Delete
             </button>

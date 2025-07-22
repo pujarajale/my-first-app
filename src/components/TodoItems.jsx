@@ -1,5 +1,5 @@
 import TodoItem from "./TodoItem";
-const TodoItems = ({ todoItems }) => {
+const TodoItems = ({ todoItems, onDeleteClick }) => {
   return (
     <>
       <div>
@@ -8,6 +8,7 @@ const TodoItems = ({ todoItems }) => {
             key={items.name}
             itemName={items?.name}
             itemDate={items?.dueDate}
+            onDeleteClick={onDeleteClick}
           ></TodoItem>
         ))}
       </div>
