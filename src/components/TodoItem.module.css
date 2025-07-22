@@ -1,3 +1,7 @@
 .todoBtn {
   min-width: 70px;
 }
+
+.rowStyle {
+  padding: 10px 0;
+}

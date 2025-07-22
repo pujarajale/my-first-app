@@ -1,5 +1,6 @@
 import { useState } from "react";
-
+import styles from "./TodoItem.module.css";
+import { MdAddBox } from "react-icons/md";
 const AddTodo = ({ onNewItem }) => {
   const [todoName, setTodoName] = useState("");
   const [dueDate, setDueDate] = useState("");
@@ -19,7 +20,7 @@ const AddTodo = ({ onNewItem }) => {
   return (
     <>
       <div>
-        <div className="row">
+        <div className={`row ${styles.rowStyle}`}>
           <div className="col-6">
             <input
               type="text"
@@ -38,10 +39,10 @@ const AddTodo = ({ onNewItem }) => {
           <div className="col-2">
             <button
               type="button"
-              className="btn btn-success todoBtn"
+              className={`btn btn-success ${styles.todoBtn}`}
               onClick={onHandleButtonClick}
             >
-              Add
+              <MdAddBox />
             </button>
           </div>
         </div>

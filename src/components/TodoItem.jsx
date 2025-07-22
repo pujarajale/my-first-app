@@ -1,9 +1,10 @@
 import styles from "./TodoItem.module.css";
+import { RiDeleteBin6Line } from "react-icons/ri";
 const TodoItem = ({ itemName, itemDate, onDeleteClick }) => {
   return (
     <>
       <div>
-        <div className="row">
+        <div className={`row ${styles.rowStyle}`}>
           <div className="col-6">{itemName}</div>
           <div className="col-4">{itemDate}</div>
           <div className="col-2">
@@ -14,7 +15,7 @@ const TodoItem = ({ itemName, itemDate, onDeleteClick }) => {
                 onDeleteClick(itemName);
               }}
             >
-              Delete
+              <RiDeleteBin6Line />
             </button>
           </div>
         </div>
