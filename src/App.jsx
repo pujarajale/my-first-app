@@ -17,8 +17,10 @@ import WelcomeMsg from "./components/WelcomeMsg";
 const App = () => {
   const [todoItems, setTodoItems] = useState([]);
   const handleNewItem = (itemName, dueDate) => {
-    let newTodoItem = [...todoItems, { name: itemName, dueDate: dueDate }];
-    setTodoItems(newTodoItem);
+    setTodoItems((preItems) => [
+      ...preItems,
+      { name: itemName, dueDate: dueDate },
+    ]);
   };
   const handleDeleteItem = (itemName) => {
     const newTodoItems = todoItems.filter((item) => item.name !== itemName);
