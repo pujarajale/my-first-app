@@ -11,7 +11,9 @@ const AddTodo = ({ onNewItem }) => {
   const handleDateChange = (event) => {
     setDueDate(event?.target?.value);
   };
-  const onHandleButtonClick = () => {
+  const onHandleButtonClick = (event) => {
+    event.preventDefault();
+    console.log(event);
     onNewItem(todoName, dueDate);
     setTodoName("");
     setDueDate("");
@@ -20,7 +22,10 @@ const AddTodo = ({ onNewItem }) => {
   return (
     <>
       <div>
-        <div className={`row ${styles.rowStyle}`}>
+        <form
+          onSubmit={onHandleButtonClick}
+          className={`row ${styles.rowStyle}`}
+        >
           <div className="col-6">
             <input
               type="text"
@@ -38,14 +43,13 @@ const AddTodo = ({ onNewItem }) => {
           </div>
           <div className="col-2">
             <button
-              type="button"
+              type="submit"
               className={`btn btn-success ${styles.todoBtn}`}
-              onClick={onHandleButtonClick}
             >
               <MdAddBox />
             </button>
           </div>
-        </div>
+        </form>
       </div>
     </>
   );
